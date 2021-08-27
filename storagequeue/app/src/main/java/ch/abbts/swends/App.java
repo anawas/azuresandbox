@@ -13,13 +13,10 @@ import com.azure.storage.queue.models.QueueStorageException;
 
 public class App {
     final String queueName = "orakel-message-queue";
-    final String connString = "DefaultEndpointsProtocol=https;" +
-        "AccountName=abbtssyastorage;" +
-        "AccountKey=tNqpcdzlIZsLRHxrtmXjiPTP0pHQv/JbtzzTOqFvL3AWVHwoa1SVtWoNnfyV7rq6noKvZOWutOGNTR7QGcM0gQ==;"
-        + "EndpointSuffix=core.windows.net";
+    final String connectionString = "Your connection string";
 
     public void addQueueMessage(String messageText) throws QueueStorageException {
-        QueueClient queueClient = new QueueClientBuilder().connectionString(connString).queueName(queueName)
+        QueueClient queueClient = new QueueClientBuilder().connectionString(connectionString).queueName(queueName)
                 .buildClient();
         System.out.println("Adding message to queue: " + messageText);
         queueClient.sendMessage(messageText);
