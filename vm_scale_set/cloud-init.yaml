@@ -1,0 +1,10 @@
+package-upgrade: true
+packages:
+    - nginx
+write_files:
+    - owner: www-data:www-data
+    - path: /var/www/html/index.html
+      contents: |
+        Hello world from Virtual Machine Scale Set!
+runcmd:
+    - service nginx restart
