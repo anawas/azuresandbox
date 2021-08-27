@@ -23,7 +23,7 @@ public class App {
     }
 
     public void dequeueMessages() throws QueueStorageException {
-        QueueClient queueClient = new QueueClientBuilder().connectionString(connString).queueName(queueName)
+        QueueClient queueClient = new QueueClientBuilder().connectionString(connectionString).queueName(queueName)
                 .buildClient();
 
         final int MAX_MESSAGES = 20;
