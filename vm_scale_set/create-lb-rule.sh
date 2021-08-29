@@ -1,3 +1,4 @@
+echo "Creating load balancer rule..."
 az network lb rule create \
   --resource-group sya-cct-demo \
   --name webServerLoadBalancerRuleWeb \
