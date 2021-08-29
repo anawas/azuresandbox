@@ -1,7 +1,9 @@
+echo "Creating resource group..."
 az group create \
   --location westus \
   --name sya-cct-demo
   
+echo "Creating vm scale set..."
 az vmss create \
   --resource-group sya-cct-demo \
   --name webServerScaleSet \
