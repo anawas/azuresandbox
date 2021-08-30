@@ -2,6 +2,7 @@
 package_upgrade: true
 packages:
   - nginx
+  - openjdk-11-jdk-headless
 write_files:
   - owner: www-data:www-data
     path: /var/www/html/index.html
