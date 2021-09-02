@@ -1,0 +1,25 @@
+name: Publish Image to ACR on Push
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '!**.md'
+      - '!docs/**'
+      - '!resources/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: azure/docker-login@v1
+        with:
+          login-server: ndshfswe.azurecr.io
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - run: |
+          docker build . -t ndshfswe.azurecr.io/exman
+          docker push ndshfswe.azurecr.io/exman

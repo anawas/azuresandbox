@@ -1,0 +1,19 @@
+name: Scan for security vulnerabilities
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - run: docker build . -t ndshfswe.azurecr.io/exman-sec:${{ github.sha }}
+      
+    - uses: Azure/container-scan@v0
+      with:
+        severity-threshold: MEDIUM
+        image-name: ndshfswe.azurecr.io/exman-sec:${{ github.sha }}

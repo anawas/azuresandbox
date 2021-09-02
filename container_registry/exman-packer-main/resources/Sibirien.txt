@@ -1,0 +1,6 @@
+Bohrstock; 4; 180
+Messsonde; 2; 350
+Bohrmaschine; 8; 240
+Schaufel; 2; 110
+Pickel; 4; 120
+Spektrometer; 14; 180

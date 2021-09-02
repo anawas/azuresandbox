@@ -1,0 +1,5 @@
+Roboter; 184; 12400
+Messstation; 144; 8900
+Kommunikation; 85; 14500
+Fahrzeug; 207; 11600
+Labor; 278; 19000

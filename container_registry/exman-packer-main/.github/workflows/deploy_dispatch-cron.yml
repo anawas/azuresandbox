@@ -1,0 +1,19 @@
+name: Deploy to Azure WebApp
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Publish Image to ACR on Push"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'exman'
+        publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+        images: 'ndshfswe.azurecr.io/exman:latest'

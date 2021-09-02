@@ -1,0 +1,6 @@
+Taucherblei; 9; 50
+Anzug; 3; 60
+Sauerstoff; 12; 80
+Proviant; 14; 20
+Kamera; 5; 95
+Beleuchtung; 8; 75
