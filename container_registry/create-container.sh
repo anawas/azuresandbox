@@ -8,7 +8,7 @@ do
     --resource-group $group  \
     --name mycontainer$i \
     --image exmanregistry.azurecr.io/exman-packer:1.1 \
-    --registry-password sTVCSdu/vWeKuR=S48QAjttAJI6p7JcO \
-    --registry-username exmanregistry \
+    --registry-password "" \
+    --registry-username "" \
     --ip-address public
 done
